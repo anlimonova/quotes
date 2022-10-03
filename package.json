@@ -1,0 +1,15 @@
+{
+  "name": "quotes",
+  "source": "src/quote-generator.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.7.0",
+    "parcel": "^2.7.0"
+  },
+  "dependencies": {
+    "prettier": "^2.7.1"
+  }
+}

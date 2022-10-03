@@ -1,0 +1,133 @@
+@import 'global';
+@import 'reset';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+@import "../components/loader/loader";
+
+
+.quote {
+&__container {
+   margin: auto;
+   max-width: 900px;
+   padding: 20px 30px;
+   border-radius: 10px;
+   background-color: rgba(255, 255, 255, 0.7);
+   box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.2);
+ }
+
+&__text {
+   position: relative;
+   padding: 0 60px;
+   font-size: 2.75rem;
+  font-weight: 500;
+ }
+
+.long-quote {
+  font-size: 2.2rem;
+}
+
+.fa-quote-left,
+.fa-quote-right {
+  position: absolute;
+  font-size: 3.5rem;
+  color: #1baba5;
+}
+
+.fa-quote-left {
+  top: 0;
+  left: 0;
+}
+.fa-quote-right {
+  bottom: 0;
+  right: 0;
+}
+
+&__author {
+   margin-top: 25px;
+   font-size: 2rem;
+   font-weight: 400;
+   font-style: italic;
+ }
+
+&__button-container {
+   margin-top: 15px;
+   display: flex;
+   justify-content: space-between;
+ }
+
+&__btn {
+   @extend %reset-button;
+   transition: transform 0.1s ease-in;
+
+  span {
+    position: relative;
+    padding: 0.5rem 1.8rem;
+    border-radius: 10px;
+    background-color: #333;
+    color: #fff;
+    font-weight: 600;
+    transition: background-color 0.1s ease-out, transform 0.1s ease-in;
+    z-index: 1;
+
+    &::after {
+       content: '';
+       position: absolute;
+       top: 0.3rem;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       background-color: rgba(121, 121, 121, 0.65);
+       border-radius: 10px;
+       transition: transform 0.1s ease-in;
+       z-index: -1;
+    }
+  }
+
+  &._new-quote-btn:active {
+     transform: translate(0, 0.3rem);
+
+  span::after {
+    transform: translate(0, -0.3rem);
+  }
+}
+
+&._vk-btn {
+  color: #333;
+  transition: color $fast-transition-duration ease-out, transform 0.1s ease-in;
+  &:hover {
+     color: #4680C2;
+   }
+  &:active {
+    transform: scale(0.95);
+  }
+}
+&._new-quote-btn:hover span {
+   background-color: #1baba5;
+ }
+}
+.fa-vk {
+  font-size: 3rem;
+}
+}
+
+@media screen and (max-width: 1000px) {
+  .quote-container {
+    margin: auto 5vw;
+  }
+  .quote-text {
+    font-size: 2.5rem;
+  }
+  .fa-quote-left,
+  .fa-quote-right {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .quote-text {
+    font-size: 2rem;
+  }
+  .fa-quote-left,
+  .fa-quote-right {
+    font-size: 2.5rem;
+  }
+}

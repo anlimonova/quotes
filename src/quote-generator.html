@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quote Generator</title>
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="stylesheet" href="assets/styles/styles.scss" />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css'>
+</head>
+<body>
+<div class="wrapper">
+    <main>
+
+        <div class='quote'>
+            <div class='container'>
+                <div class='quote__container' data-quote-container>
+                    <div class='quote__text'>
+                        <i class='fas fa-quote-left'></i>
+                        <span data-quote-text></span>
+                        <i class='fas fa-quote-right'></i>
+                    </div>
+                    <div class='quote__author'>
+                        <span data-quote-author></span>
+                    </div>
+                    <div class='quote__button-container'>
+                        <a class='quote__btn _vk-btn' title='Поделиться ВКонтакте!' data-quote-vk-btn>
+						  <i class="fa-brands fa-vk"></i>
+                        </a>
+                        <button class='quote__btn _new-quote-btn' data-new-quote-btn>
+                            <span>New Quote</span>
+                        </button>
+                    </div>
+                </div>
+              <div class="loader quote__loader" data-loader></div>
+            </div>
+        </div>
+
+    </main>
+</div>
+<script type="module" src="assets/js/index.js"></script>
+</body>
+</html>
