@@ -1,6 +1,6 @@
 {
   "name": "quotes",
-  "source": "src/quote-generator.html",
+  "source": "src/index.html",
   "scripts": {
     "start": "parcel",
     "build": "parcel build"
