@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm i
-      - run: npm run build --if-present
+      - run: npm run build
 
   deployment:
     runs-on: ubuntu-latest
@@ -30,6 +30,7 @@ jobs:
 
     steps:
       - name: deploy
+      - run: CI=false npm run build
       - run: rm -rf public
-      - run: cp build/index.html
-      - run: mv build public
+      - run: cp dist/index.html
+      - run: mv dist public
