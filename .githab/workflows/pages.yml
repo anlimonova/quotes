@@ -8,23 +8,19 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [14.x, 15.x, 16.x, 18.x]
-
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Build
+        run: |
+          npm i
+          npm run build
+          cp ./dist/index.html ./dist/404.html
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          node-version: ${{ matrix.node-version }}
-      - run: npm i
-      - run: npm run build
-      - run: cp ./dist/index.html ./dist/404.html
-
+          path: './dist/'
   deploy:
     needs: build
     environment:
